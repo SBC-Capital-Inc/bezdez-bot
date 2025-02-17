@@ -16,7 +16,7 @@ fi
 # 
 # Add the remote repository URL
 # 
-git remote add origin git@github.com:SBC-Capital-Inc/bezdez-bot.git
+git remote add origin git@github.com:$GIT_REPOSITORY
 
 # 
 # Check if the README.md or any other file exists in the remote repo
