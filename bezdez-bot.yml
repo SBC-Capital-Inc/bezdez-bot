@@ -6,8 +6,8 @@ services:
     ports:
       - 3222:22
     # environment:
-    volumes:
-      - ${HOME}/bezdez-bot:/home/bezdez/bezdez-bot
+    # volumes:
+    #   - ${HOME}/bezdez-bot:/home/bezdez/bezdez-bot
     networks:
       - bezdez-net
 

@@ -47,7 +47,7 @@ while [ $SECONDS -lt $end ]; do
 done
 
 if [[ "$container_status" != "running" ]]; then
-    echo -e "${ANSI_BG_RED}Container \"${CONTAINER_NAME}\" is not running.${ANSI_OFF}"
+    echo -e ${ANSI_BG_RED}"Container" ${CONTAINER_NAME} "is not running."${ANSI_OFF}
 else
     echo -e "${ANSI_BG_BLUE}Container ${ANSI_BG_PURPLE}\"${CONTAINER_NAME}\"${ANSI_BG_BLUE} is running successfully.${ANSI_OFF}"
 fi

@@ -37,8 +37,12 @@ RUN  mkdir -p ${HOME}/${PROJECT_NAME}
 COPY *.sh  ${HOME}/${PROJECT_NAME}/
 COPY *.py  ${HOME}/${PROJECT_NAME}/
 COPY *.db  ${HOME}/${PROJECT_NAME}/
+RUN echo -e \
+     'alias l="ls -alF --color=auto --group-directories-first";\n' \
+     'alias run="/bin/bash ";' \
+     >> ${HOME}/.bashrc
 
-# RUN chown -R ${PROJECT_USER}:${PROJECT_USER} ${HOME}/${PROJECT_NAME}
+RUN chown -R ${PROJECT_USER}:${PROJECT_USER} ${HOME}
 
 RUN ls -alF --color=auto --group-directories-first ${HOME}/${PROJECT_NAME}
 
@@ -49,7 +53,10 @@ RUN ls -alF --color=auto --group-directories-first
 RUN ./suv-venv-activate.sh
 RUN ./suv-venv-install-modules.sh
 
+RUN ls -alF --color=auto --group-directories-first
+
 EXPOSE 22/tcp
 
-ENTRYPOINT ["./suv-bot-start.sh"]
+# ENTRYPOINT ["./suv-entrypoint-idle.sh"]
+ENTRYPOINT ["./suv-entrypoint-bot.sh"]
 CMD []
