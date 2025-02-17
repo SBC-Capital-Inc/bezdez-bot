@@ -18,7 +18,6 @@ RUN groupadd sshusers
 RUN usermod -aG sshusers ${PROJECT_USER}
 RUN usermod -aG sudo     ${PROJECT_USER}
 
-USER ${PROJECT_USER}
 ENV  HOME="/home/"${PROJECT_USER}
 
 # 
@@ -38,16 +37,20 @@ COPY *.sh  ${HOME}/${PROJECT_NAME}/
 COPY *.py  ${HOME}/${PROJECT_NAME}/
 COPY *.db  ${HOME}/${PROJECT_NAME}/
 
+RUN chown -R ${PROJECT_USER}:${PROJECT_USER} ${HOME}/${PROJECT_NAME}
+
 RUN ls -alF --color=auto --group-directories-first ${HOME}/${PROJECT_NAME}
 
 WORKDIR ${HOME}/${PROJECT_NAME}
 
-RUN ls -alF --color=auto --group-directories-first ${HOME}/${PROJECT_NAME}
+RUN ls -alF --color=auto --group-directories-first
 
 RUN ./suv-venv-activate.sh
 RUN ./suv-venv-install-modules.sh
 
 EXPOSE 22/tcp
+
+USER ${PROJECT_USER}
 
 ENTRYPOINT ["./suv-bot-start.sh"]
 CMD []
