@@ -18,8 +18,7 @@ RUN groupadd sshusers
 RUN usermod -aG sshusers ${PROJECT_USER}
 RUN usermod -aG sudo     ${PROJECT_USER}
 
-# USER ${PROJECT_USER}
-ENV  HOME="/home/"${PROJECT_USER}
+ENV HOME="/home/"${PROJECT_USER}
 
 # 
 # Configure bezdez for SHH
@@ -42,6 +41,9 @@ RUN echo -e \
      'alias run="/bin/bash ";' \
      >> ${HOME}/.bashrc
 
+# 
+# ucomment only if user root
+# 
 RUN chown -R ${PROJECT_USER}:${PROJECT_USER} ${HOME}
 
 RUN ls -alF --color=auto --group-directories-first ${HOME}/${PROJECT_NAME}
@@ -49,6 +51,8 @@ RUN ls -alF --color=auto --group-directories-first ${HOME}/${PROJECT_NAME}
 WORKDIR ${HOME}/${PROJECT_NAME}
 
 RUN ls -alF --color=auto --group-directories-first
+
+USER ${PROJECT_USER}
 
 RUN ./suv-venv-activate.sh
 RUN ./suv-venv-install-modules.sh
@@ -58,5 +62,5 @@ RUN ls -alF --color=auto --group-directories-first
 EXPOSE 22/tcp
 
 # ENTRYPOINT ["./suv-entrypoint-idle.sh"]
-ENTRYPOINT ["./suv-entrypoint-bot.sh"]
+ENTRYPOINT ["./suv-bot-start.sh"]
 CMD []
