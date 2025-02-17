@@ -11,3 +11,9 @@ venv_pip="$venv_path/bin/pip"
 venv_python3="$venv_path/bin/python3"
 
 bot2_py="bot2.py"
+
+HOSTNAME_LOCAL="macbook-pro"
+
+GIT_REPOSITORY="SBC-Capital-Inc/bezdez-bot.git"
+GIT_FEATURE_BRANCH="dev-feature-branch"
+GIT_MAIN_BRANCH="main"
