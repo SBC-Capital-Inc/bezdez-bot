@@ -13,6 +13,11 @@ if [ ! -d "$VENV_PATH" ]; then
 fi
 
 # 
+# Linux / Ubuntu
+# python3 -m venv venv
+# 
+
+# 
 # Activate the virtual environment
 # 
 echo "Activating virtual environment"
