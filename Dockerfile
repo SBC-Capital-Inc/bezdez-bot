@@ -18,6 +18,7 @@ RUN groupadd sshusers
 RUN usermod -aG sshusers ${PROJECT_USER}
 RUN usermod -aG sudo     ${PROJECT_USER}
 
+USER ${PROJECT_USER}
 ENV  HOME="/home/"${PROJECT_USER}
 
 # 
@@ -49,9 +50,6 @@ RUN ./suv-venv-activate.sh
 RUN ./suv-venv-install-modules.sh
 
 EXPOSE 22/tcp
-
-USER ${PROJECT_USER}
-USER root
 
 ENTRYPOINT ["./suv-bot-start.sh"]
 CMD []
