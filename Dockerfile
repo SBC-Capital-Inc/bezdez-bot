@@ -38,7 +38,7 @@ COPY *.sh  ${HOME}/${PROJECT_NAME}/
 COPY *.py  ${HOME}/${PROJECT_NAME}/
 COPY *.db  ${HOME}/${PROJECT_NAME}/
 
-RUN chown -R ${PROJECT_USER}:${PROJECT_USER} ${HOME}/${PROJECT_NAME}
+# RUN chown -R ${PROJECT_USER}:${PROJECT_USER} ${HOME}/${PROJECT_NAME}
 
 RUN ls -alF --color=auto --group-directories-first ${HOME}/${PROJECT_NAME}
 
