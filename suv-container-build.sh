@@ -6,10 +6,6 @@ source "suv-options.sh"
 set -e
 set -u
 
-export PROJECT_NAME="bezdez-bot"
-export PROJECT_USER="bezdez"
-export PROJECT_USER_SSH_PUBLIC_KEY="bez_ed25519.pub"
-
 # 
 # Collect additional arguments for the docker build command
 # 
