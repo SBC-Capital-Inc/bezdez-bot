@@ -2,9 +2,6 @@ export PROJECT_NAME="bezdez-bot"
 export PROJECT_USER="bezdez"
 export PROJECT_USER_SSH_PUBLIC_KEY="bez_ed25519.pub"
 
-PROJECT_DIR="$(pwd)"
-bot2_error_log="bot2-error.log"
-
 # 
 # https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3
 # 
@@ -14,7 +11,8 @@ VENV_ACTIVATE="$VENV_PATH/bin/activate"
 VENV_PIP="$VENV_PATH/bin/pip"
 VENV_PYTHON3="$VENV_PATH/bin/python3"
 
-bot2_py="bot2.py"
+BOT2_PY="bot2.py"
+BOT2_ERROR_LOG="bot2-error.log"
 
 #
 # Это нужно для скриптов git
