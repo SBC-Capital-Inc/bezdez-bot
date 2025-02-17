@@ -7,7 +7,11 @@ set -eu
 
 echo 
 echo -e ${ANSI_BG_BLUE}"Updating"${ANSI_OFF} ${ANSI_BG_PURPLE}"pip"${ANSI_OFF} ${ANSI_BG_BLUE}"..."${ANSI_OFF}
-$VENV_PATH/bin/python3.13 -m pip install --upgrade pip
+$VENV_PYTHON3 -m pip install --upgrade pip
+
+
+# sudo apt install -y python3-pip
+
 
 # echo 
 # echo -e ${ANSI_BG_BLUE}"Installing package"${ANSI_OFF} ${ANSI_BG_PURPLE}"nest_asyncio"${ANSI_OFF} ${ANSI_BG_BLUE}"..."${ANSI_OFF}
