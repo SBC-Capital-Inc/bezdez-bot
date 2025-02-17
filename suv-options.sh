@@ -20,3 +20,8 @@ HOSTNAME_LOCAL="macbook-pro"
 GIT_REPOSITORY="SBC-Capital-Inc/bezdez-bot.git"
 GIT_FEATURE_BRANCH="dev-feature-branch"
 GIT_MAIN_BRANCH="main"
+
+
+CONTAINER_NAME="bezdez-bot"
+CONTAINER_IMAGE_NAME=$CONTAINER_NAME":latest"
+CONTAINER_YAML=$CONTAINER_NAME".yml"
