@@ -1,0 +1,16 @@
+services:
+  bezdez-bot:
+    container_name: bezdez-bot
+    hostname: bezdez-bot
+    image: bezdez-bot
+    ports:
+      - 3222:22
+    # environment:
+    volumes:
+      - ${HOME}/bezdez-bot:/home/bezdez/bezdez-bot
+    networks:
+      - bezdez-net
+
+networks:
+  bezdez-net:
+    driver: bridge
