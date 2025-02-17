@@ -15,6 +15,6 @@ echo
 set +e
 
 # Run the bot and redirect stderr to both the terminal and the error log
-$VENV_PYTHON3 $bot2_py 2> >(tee "$bot2_error_log" >&2)
+$VENV_PYTHON3 $BOT2_PY 2> >(tee "$BOT2_ERROR_LOG" >&2)
 
 echo 
