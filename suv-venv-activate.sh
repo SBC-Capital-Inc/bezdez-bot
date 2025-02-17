@@ -8,15 +8,15 @@ set -eu
 # 
 # Create the virtual environment if it doesn't exist
 # 
-if [ ! -d "$venv_path" ]; then
-    python3 -m "$venv_name" "$venv_path"
+if [ ! -d "$VENV_PATH" ]; then
+    python3 -m "$VENV_NAME" "$VENV_PATH"
 fi
 
 # 
 # Activate the virtual environment
 # 
 echo "Activating virtual environment"
-source "$venv_activate"
+source "$VENV_ACTIVATE"
 
 # 
 # Confirm activation

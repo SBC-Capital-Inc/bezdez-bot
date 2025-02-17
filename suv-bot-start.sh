@@ -14,7 +14,13 @@ echo
 
 set +e
 
-# Run the bot and redirect stderr to both the terminal and the error log
-$venv_python3 $bot2_py 2> >(tee "$bot2_error_log" >&2)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Run the bot and redirect stderr to both the terminal and the error log
+    $VENV_PYTHON3 $bot2_py 2> >(tee "$bot2_error_log" >&2)
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    python3  $bot2_py 2> >(tee "$bot2_error_log" >&2)
+else
+    echo "Unsupported OS: $OSTYPE"
+fi
 
 echo 
