@@ -18,7 +18,7 @@ RUN groupadd sshusers
 RUN usermod -aG sshusers ${PROJECT_USER}
 RUN usermod -aG sudo     ${PROJECT_USER}
 
-USER ${PROJECT_USER}
+# USER ${PROJECT_USER}
 ENV  HOME="/home/"${PROJECT_USER}
 
 # 
