@@ -51,6 +51,7 @@ RUN ./suv-venv-install-modules.sh
 EXPOSE 22/tcp
 
 USER ${PROJECT_USER}
+USER root
 
 ENTRYPOINT ["./suv-bot-start.sh"]
 CMD []
