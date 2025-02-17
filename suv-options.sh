@@ -1,4 +1,8 @@
-project_dir="$(pwd)"
+export PROJECT_NAME="bezdez-bot"
+export PROJECT_USER="bezdez"
+export PROJECT_USER_SSH_PUBLIC_KEY="bez_ed25519.pub"
+
+PROJECT_DIR="$(pwd)"
 bot2_error_log="bot2-error.log"
 
 # 
@@ -21,7 +25,9 @@ GIT_REPOSITORY="SBC-Capital-Inc/bezdez-bot.git"
 GIT_FEATURE_BRANCH="dev-feature-branch"
 GIT_MAIN_BRANCH="main"
 
-
+# 
+# Container related
+# 
 CONTAINER_NAME="bezdez-bot"
 CONTAINER_IMAGE_NAME=$CONTAINER_NAME":latest"
 CONTAINER_YAML=$CONTAINER_NAME".yml"
