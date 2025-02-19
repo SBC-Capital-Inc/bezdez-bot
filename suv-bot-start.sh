@@ -14,7 +14,7 @@ echo -e ${ANSI_BG_BLUE}"pwd:"${ANSI_OFF}      ${ANSI_BG_PURPLE}$(pwd)${ANSI_OFF}
 # Запуск бота
 # 
 echo 
-echo -e ${ANSI_BG_BLUE}"Запускаю бота 🤖 ..."${ANSI_OFF}
+echo -e ${ANSI_BG_BLUE}"Запускаю бота"${ANSI_OFF} "🤖" ${ANSI_BG_BLUE}"..."${ANSI_OFF}
 echo 
 
 set +e
